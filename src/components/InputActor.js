@@ -11,10 +11,22 @@ const actorList = [
   "김범",
   "나영석",
   "나나",
+  "김아중",
+  "아중",
+  "공유",
+  "공명",
+  "권상우",
+  "곽동연",
+  "김남길",
+  "김대명",
+  "김범",
+  "나영석",
+  "나나",
+  "김아중",
+  "아중",
 ];
 
-function InputActor() {
-  const [inputValue, setInputValue] = useState("");
+const InputActor = ({ inputValue, setInputValue }) => {
   const [isHaveInputValue, setIsHaveInputValue] = useState(false);
   const [dropDownList, setDropDownList] = useState(actorList);
   const [dropDownItemIndex, setDropDownItemIndex] = useState(-1);
@@ -75,54 +87,40 @@ function InputActor() {
       </InputBox>
       {isHaveInputValue && (
         <DropDownBox>
-          {dropDownList.length === 0
-            ? actorList.map((dropDownItem, dropDownIndex) => {
-                return (
-                  <DropDownItem
-                    key={dropDownIndex}
-                    onClick={() => clickDropDownItem(dropDownItem)}
-                    onMouseOver={() => setDropDownItemIndex(dropDownIndex)}
-                    className={
-                      dropDownItemIndex === dropDownIndex ? "selected" : ""
-                    }
-                  >
-                    {dropDownItem}
-                  </DropDownItem>
-                );
-              })
-            : dropDownList.map((dropDownItem, dropDownIndex) => {
-                return (
-                  <DropDownItem
-                    key={dropDownIndex}
-                    onClick={() => clickDropDownItem(dropDownItem)}
-                    onMouseOver={() => setDropDownItemIndex(dropDownIndex)}
-                    className={
-                      dropDownItemIndex === dropDownIndex ? "selected" : ""
-                    }
-                  >
-                    {dropDownItem}
-                  </DropDownItem>
-                );
-              })}
+          {dropDownList.length === 0 && (
+            <DropDownItem>해당하는 배우가 없습니다</DropDownItem>
+          )}
+          {dropDownList.map((dropDownItem, dropDownIndex) => {
+            return (
+              <DropDownItem
+                key={dropDownIndex}
+                onClick={() => clickDropDownItem(dropDownItem)}
+                onMouseOver={() => setDropDownItemIndex(dropDownIndex)}
+                className={
+                  dropDownItemIndex === dropDownIndex ? "selected" : ""
+                }
+              >
+                {dropDownItem}
+              </DropDownItem>
+            );
+          })}
         </DropDownBox>
       )}
     </WholeBox>
   );
-}
+};
 
 const activeBorderRadius = "16px 16px 0 0";
 const inactiveBorderRadius = "16px 16px 16px 16px";
 
 const WholeBox = styled.div`
-  width: 220px;
-  hieht: 100px;
   padding: 10px;
 `;
 
 const InputBox = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 16px;
+  padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: ${(props) =>
     props.isHaveInputValue ? activeBorderRadius : inactiveBorderRadius};
@@ -140,7 +138,8 @@ const Input = styled.input`
   background-color: transparent;
   border: none;
   outline: none;
-  font-size: 15px;
+  font-size: 16px;
+  font-family: "Song Myung";
 `;
 
 const DeleteButton = styled.div`
@@ -158,10 +157,14 @@ const DropDownBox = styled.ul`
   box-shadow: 0 10px 10px rgb(0, 0, 0, 0.3);
   list-style-type: none;
   z-index: 3;
+  height: expression(this.scrollHeight > 99 ? "100px": "auto");
+  max-height: 100px;
+  overflow: scroll;
 `;
 
 const DropDownItem = styled.li`
   padding: 0 16px;
+  font-family: "Song Myung";
 
   &.selected {
     background-color: lightgray;

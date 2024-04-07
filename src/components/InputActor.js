@@ -120,7 +120,8 @@ const WholeBox = styled.div`
 const InputBox = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  padding: 5px;
+  padding-left: 15px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: ${(props) =>
     props.isHaveInputValue ? activeBorderRadius : inactiveBorderRadius};
@@ -138,7 +139,7 @@ const Input = styled.input`
   background-color: transparent;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 13px;
   font-family: "Gowun Dodum";
 `;
 

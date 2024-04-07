@@ -5,7 +5,7 @@ function Header() {
     <div style={{ display: "flex", justifyContent: "center" }}>
       <p
         style={{
-          fontSize: 30,
+          fontSize: 25,
           top: "18%",
           paddingLeft: 10,
           fontFamily: "Gowun Dodum",

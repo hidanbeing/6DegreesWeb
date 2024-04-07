@@ -22,19 +22,34 @@ function Home() {
           to
         </p>
         <InputActor inputValue={actor2} setInputValue={setActor2} />
-        <Link to={`/details?actor1=${actor1}&&actor2=${actor2}`}>
+        {actor1 === "" || actor2 === "" ? (
           <button
+            onClick={() => alert("배우를 다시입력하세요")}
             style={{
-              width: 70,
+              width: 60,
               height: 30,
               marginTop: 15,
+              padding: 0,
               fontFamily: "Song Myung",
             }}
           >
             connect
           </button>
-          {console.log(actor1, actor2)}
-        </Link>
+        ) : (
+          <Link to={`/details?actor1=${actor1}&&actor2=${actor2}`}>
+            <button
+              style={{
+                width: 60,
+                height: 30,
+                marginTop: 15,
+                fontFamily: "Song Myung",
+              }}
+            >
+              connect
+            </button>
+            {console.log(actor1, actor2)}
+          </Link>
+        )}
       </div>
       <br />
       <div style={{ display: "flex", justifyContent: "center" }}>

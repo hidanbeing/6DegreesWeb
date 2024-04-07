@@ -8,7 +8,7 @@ function Header() {
           fontSize: 30,
           top: "18%",
           paddingLeft: 10,
-          fontFamily: "Song Myung",
+          fontFamily: "Gowun Dodum",
         }}
       >
         한국의 Kevin Bacon을 찾아서.. &nbsp;

@@ -10,7 +10,7 @@ function Home() {
   return (
     <div style={{}}>
       <Header />
-      <br />
+      <hr />
       <div style={{ display: "flex", justifyContent: "center" }}>
         <InputActor inputValue={actor1} setInputValue={setActor1} />
         <p

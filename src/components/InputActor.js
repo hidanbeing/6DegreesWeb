@@ -139,7 +139,7 @@ const Input = styled.input`
   border: none;
   outline: none;
   font-size: 16px;
-  font-family: "Song Myung";
+  font-family: "Gowun Dodum";
 `;
 
 const DeleteButton = styled.div`
@@ -164,7 +164,7 @@ const DropDownBox = styled.ul`
 
 const DropDownItem = styled.li`
   padding: 0 16px;
-  font-family: "Song Myung";
+  font-family: "Gowun Dodum";
 
   &.selected {
     background-color: lightgray;

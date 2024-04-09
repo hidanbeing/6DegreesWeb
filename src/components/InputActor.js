@@ -12,18 +12,15 @@ const actorList = [
   "나영석",
   "나나",
   "김아중",
-  "아중",
-  "공유",
-  "공명",
-  "권상우",
-  "곽동연",
-  "김남길",
-  "김대명",
-  "김범",
-  "나영석",
-  "나나",
-  "김아중",
-  "아중",
+  "강경준",
+  "강계식",
+  "강기영",
+  "강남길",
+  "강동원",
+  "강민혁",
+  "강봉성",
+  "강석우",
+  "강성민",
 ];
 
 const InputActor = ({ inputValue, setInputValue }) => {
@@ -110,22 +107,22 @@ const InputActor = ({ inputValue, setInputValue }) => {
   );
 };
 
-const activeBorderRadius = "16px 16px 0 0";
-const inactiveBorderRadius = "16px 16px 16px 16px";
-
 const WholeBox = styled.div`
+  display: flex;
   padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  height: 145px;
 `;
 
 const InputBox = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 5px;
-  padding-left: 15px;
+  padding: 10px;
+  width: 60%;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: ${(props) =>
-    props.isHaveInputValue ? activeBorderRadius : inactiveBorderRadius};
-  z-index: 3;
+  position: relative;
+  background-color: white;
 
   &:focus-within {
     box-shadow: 0 10px 10px rgb(0, 0, 0, 0.3);
@@ -139,8 +136,8 @@ const Input = styled.input`
   background-color: transparent;
   border: none;
   outline: none;
-  font-size: 13px;
-  font-family: "Gowun Dodum";
+  font-size: 16px;
+  width: 60%;
 `;
 
 const DeleteButton = styled.div`
@@ -149,27 +146,24 @@ const DeleteButton = styled.div`
 
 const DropDownBox = styled.ul`
   display: block;
+  width: 68%;
   margin: 0 auto;
   padding: 8px 0;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-top: none;
-  border-radius: 0 0 16px 16px;
   box-shadow: 0 10px 10px rgb(0, 0, 0, 0.3);
   list-style-type: none;
-  z-index: 3;
   height: expression(this.scrollHeight > 99 ? "100px": "auto");
   max-height: 100px;
   overflow: scroll;
 `;
 
 const DropDownItem = styled.li`
-  padding: 0 16px;
-  font-family: "Gowun Dodum";
+  padding: 0 10px;
 
   &.selected {
     background-color: lightgray;
   }
 `;
-
 export default InputActor;

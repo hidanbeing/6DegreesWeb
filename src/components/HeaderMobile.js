@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import listIcon from "../image/listIcon.png";
 
 function HeaderMobile() {
   return (
@@ -16,21 +17,26 @@ function HeaderMobile() {
         <h1
           style={{
             fontSize: 30,
-            paddingLeft: 50,
+            paddingLeft: 30,
           }}
         >
           6DegreesMovieWeb 🎥
         </h1>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          position: "absolute",
-          bottom: 0,
-          right: 50,
-        }}
-      ></div>
+
+      <div>
+        <img
+          style={{
+            width: 30,
+            height: 30,
+            display: "flex",
+            position: "absolute",
+            right: 20,
+            top: 25,
+          }}
+          src={listIcon}
+        ></img>
+      </div>
     </div>
   );
 }

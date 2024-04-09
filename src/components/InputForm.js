@@ -8,64 +8,64 @@ function InputForm() {
   const [actor2, setActor2] = useState("");
 
   return (
-    <InputFromBox
-      style={{
-        marginLeft: 30,
-        marginTop: 10,
-        borderRadius: 10,
-        position: "relative",
-      }}
-    >
-      <div
+    <>
+      <InputFromBox
         style={{
-          display: "flex",
-          justifyContent: "center",
-          fontSize: 20,
+          borderRadius: 10,
+          position: "relative",
         }}
       >
-        <p>👩🏻‍🎤 배우 입력 👨🏻‍🎤</p>
-      </div>
-      <InputActor inputValue={actor1} setInputValue={setActor1} />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            fontSize: 20,
+          }}
+        >
+          <p>👩🏻‍🎤 배우 입력 👨🏻‍🎤</p>
+        </div>
+        <InputActor inputValue={actor1} setInputValue={setActor1} />
 
-      <InputActor inputValue={actor2} setInputValue={setActor2} />
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        {actor1 === "" || actor2 === "" ? (
-          <button
-            onClick={() => alert("배우를 다시입력하세요")}
-            style={{
-              width: 60,
-              height: 30,
-              marginTop: 10,
-              backgroundColor: "white",
-              border: 1,
-              borderRadius: 3,
-            }}
-          >
-            connect
-          </button>
-        ) : (
-          <Link to={`/details?cast1=${actor1}&cast2=${actor2}`}>
+        <InputActor inputValue={actor2} setInputValue={setActor2} />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          {actor1 === "" || actor2 === "" ? (
             <button
+              onClick={() => alert("배우를 다시입력하세요")}
               style={{
                 width: 60,
                 height: 30,
                 marginTop: 10,
                 backgroundColor: "white",
+                border: 1,
+                borderRadius: 3,
               }}
             >
               connect
             </button>
-          </Link>
-        )}
-      </div>
-    </InputFromBox>
+          ) : (
+            <Link to={`/details?cast1=${actor1}&cast2=${actor2}`}>
+              <button
+                style={{
+                  width: 60,
+                  height: 30,
+                  marginTop: 10,
+                  backgroundColor: "white",
+                }}
+              >
+                connect
+              </button>
+            </Link>
+          )}
+        </div>
+      </InputFromBox>
+    </>
   );
 }
 
 const InputFromBox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 400px;
   height: 460px;
   border: 0px solid black;
   background-color: #f0f0f0;

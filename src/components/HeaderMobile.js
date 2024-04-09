@@ -1,8 +1,20 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import listIcon from "../image/listIcon.png";
 
+function SideList() {
+  return (
+    <div
+      style={{
+        backgroundColor: "black",
+        width: 100,
+        height: 300,
+        position: "fixed",
+      }}
+    ></div>
+  );
+}
 function HeaderMobile() {
+  const [open, setOpen] = useState(false);
   return (
     <div
       style={{
@@ -23,8 +35,7 @@ function HeaderMobile() {
           6DegreesMovieWeb 🎥
         </h1>
       </div>
-
-      <div>
+      <div onClick={() => setOpen(true)}>
         <img
           style={{
             width: 30,
@@ -41,12 +52,4 @@ function HeaderMobile() {
   );
 }
 
-const DivRoute = styled.p`
-  margin: 10px;
-  margin-top: 15px;
-  color: black;
-
-  padding: 5px;
-  border-bottom: solid 1px black;
-`;
 export default HeaderMobile;

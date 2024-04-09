@@ -21,6 +21,8 @@ const actorList = [
   "강봉성",
   "강석우",
   "강성민",
+  "황정민",
+  "정우",
 ];
 
 const InputActor = ({ inputValue, setInputValue }) => {

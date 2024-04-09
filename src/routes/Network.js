@@ -1,5 +1,12 @@
+import Header from "../components/Header";
+
 function Network() {
-  return <div>network</div>;
+  return (
+    <>
+      <Header />
+      network
+    </>
+  );
 }
 
 export default Network;

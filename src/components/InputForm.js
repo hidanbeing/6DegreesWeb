@@ -43,7 +43,7 @@ function InputForm() {
               connect
             </button>
           ) : (
-            <Link to={`/details?cast1=${actor1}&cast2=${actor2}`}>
+            <Link to={`/degrees?cast1=${actor1}&cast2=${actor2}`}>
               <button
                 style={{
                   width: 60,

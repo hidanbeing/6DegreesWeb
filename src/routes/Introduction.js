@@ -1,5 +1,12 @@
+import Header from "../components/Header";
+
 function Introduction() {
-  return <div>intro</div>;
+  return (
+    <>
+      <Header />
+      intro
+    </>
+  );
 }
 
 export default Introduction;

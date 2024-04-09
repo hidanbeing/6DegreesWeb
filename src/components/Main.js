@@ -1,38 +1,35 @@
-import InputForm from "./InputForm";
-import hwang from "../image/hwang.png";
+import { useMediaQuery } from "react-responsive";
+import MainDesktop from "./MainDesktop";
+import MainMobile from "./MainMobile";
+
+const Desktop = ({ children }) => {
+  const isDesktop = useMediaQuery({ minWidth: 992 });
+  return isDesktop ? children : null;
+};
+
+const Tablet = ({ children }) => {
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+  return isTablet ? children : null;
+};
+
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  return isMobile ? children : null;
+};
 
 function Main() {
   return (
-    <div
-      style={{
-        display: "flex",
-      }}
-    >
-      <div
-        style={{
-          marginTop: 10,
-          marginLeft: 20,
-        }}
-      >
-        <InputForm />
-      </div>
-      <div
-        style={{
-          width: 800,
-          display: "flex",
-          justifyContent: "center",
-          textAlign: "center",
-        }}
-      >
-        <img
-          src={hwang}
-          style={{
-            width: 250,
-            height: 250,
-          }}
-        />
-      </div>
-    </div>
+    <>
+      <Desktop>
+        <MainDesktop />
+      </Desktop>
+      <Tablet>
+        <MainMobile />
+      </Tablet>
+      <Mobile>
+        <MainMobile />
+      </Mobile>
+    </>
   );
 }
 

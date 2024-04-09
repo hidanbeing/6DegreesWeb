@@ -15,6 +15,7 @@ function App() {
         <Route path="/introduction" element={<Introduction />} />
         <Route path="/network" element={<Network />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/mp" element={<MobilePC />} />
       </Routes>
     </Router>
   );

@@ -27,7 +27,12 @@ function InputForm() {
         <InputActor inputValue={actor1} setInputValue={setActor1} />
 
         <InputActor inputValue={actor2} setInputValue={setActor2} />
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           {actor1 === "" || actor2 === "" ? (
             <button
               onClick={() => alert("배우를 다시입력하세요")}

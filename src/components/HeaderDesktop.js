@@ -55,5 +55,9 @@ const DivRoute = styled.p`
 
   padding: 5px;
   border-bottom: solid 1px black;
+
+  &:hover {
+    color: #b4b4b8;
+  }
 `;
 export default HeaderDesktop;

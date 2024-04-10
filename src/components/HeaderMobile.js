@@ -29,47 +29,45 @@ function HeaderMobile() {
         </Link>
       </div>
       <div onClick={() => setOpen(true)} onMouseOut={() => setOpen(false)}>
-        <div>
-          <img
-            style={{
-              width: 30,
-              height: 30,
-              display: "flex",
-              position: "absolute",
-              right: 20,
-              top: 25,
-            }}
-            src={listIcon}
-          ></img>
-        </div>
-        {open ? (
-          <div
-            onMouseUp={() => setOpen(true)}
-            style={{
-              backgroundColor: "#EFECEC",
-              width: 110,
-              height: 130,
-              position: "fixed",
-              right: 9,
-              top: 90,
-              zIndex: 100,
-              padding: 5,
-              boxShadow: "5px 0px 10px #EFECEC",
-              textAlign: "center",
-            }}
-          >
-            <Link to={`/introduction`} style={{ textDecoration: "none" }}>
-              <DivRoute>Introduction</DivRoute>
-            </Link>
-            <Link to={`/network`} style={{ textDecoration: "none" }}>
-              <DivRoute>Network</DivRoute>
-            </Link>
-            <Link to={`/contact`} style={{ textDecoration: "none" }}>
-              <DivRoute>Contact</DivRoute>
-            </Link>
-          </div>
-        ) : null}
+        <img
+          style={{
+            width: 30,
+            height: 30,
+            display: "flex",
+            position: "absolute",
+            right: 20,
+            top: 25,
+          }}
+          src={listIcon}
+        ></img>
       </div>
+      {true ? (
+        <div
+          onMouseUp={() => setOpen(true)}
+          style={{
+            backgroundColor: "#EFECEC",
+            width: 110,
+            height: 130,
+            position: "fixed",
+            right: 9,
+            top: 90,
+            zIndex: 100,
+            padding: 5,
+            boxShadow: "5px 0px 10px #EFECEC",
+            textAlign: "center",
+          }}
+        >
+          <Link to={`/introduction`} style={{ textDecoration: "none" }}>
+            <DivRoute>Introduction</DivRoute>
+          </Link>
+          <Link to={`/network`} style={{ textDecoration: "none" }}>
+            <DivRoute>Network</DivRoute>
+          </Link>
+          <Link to={`/contact`} style={{ textDecoration: "none" }}>
+            <DivRoute>Contact</DivRoute>
+          </Link>
+        </div>
+      ) : null}
     </div>
   );
 }

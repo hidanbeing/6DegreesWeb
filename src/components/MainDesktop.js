@@ -24,13 +24,13 @@ function MainDesktop() {
           textAlign: "center",
         }}
       >
-        <img
+        {/* <img
           src={hwang}
           style={{
             width: 250,
             height: 250,
           }}
-        />
+        /> */}
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ function Details() {
   const [searchParams] = useSearchParams();
   const [myData, setData] = useState([]);
   const [isData, setIsData] = useState(false);
+  // console.log(searchParams.get("cast2"));
   useEffect(() => {
     axios
       .get(
@@ -16,8 +17,9 @@ function Details() {
         )}&cast2=${searchParams.get("cast2")}`
       )
       .then((result) => {
+        // console.log(result.data);
+
         setData(result.data.result);
-        // console.log(result.data.result);
         setIsData(true);
         setLoading(false);
       })
@@ -38,9 +40,9 @@ function Details() {
             border: 1,
           }}
         >
-          <ResultDiv type={"cast"} name={myData.people1.name} />
-          <ResultDiv type={"movie"} name={myData.movie1.name} />
-          <ResultDiv type={"cast"} name={myData.people2.name} />
+          <ResultDiv type={"cast"} name={myData[0]} />
+          <ResultDiv type={"movie"} name={myData[1]} />
+          <ResultDiv type={"cast"} name={myData[2]} />
         </div>
       ) : (
         "loading"

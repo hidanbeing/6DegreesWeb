@@ -1,5 +1,6 @@
 import InputForm from "./InputForm";
 import hwang from "../image/hwang.png";
+import ActorGraph from "./ActorGraph";
 
 function MainDesktop() {
   return (
@@ -24,13 +25,14 @@ function MainDesktop() {
           textAlign: "center",
         }}
       >
-        {/* <img
+        <img
           src={hwang}
           style={{
             width: 250,
             height: 250,
           }}
-        /> */}
+        />
+        {/* <ActorGraph /> */}
       </div>
     </div>
   );

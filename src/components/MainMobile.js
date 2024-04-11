@@ -14,7 +14,6 @@ function MainMobile() {
           marginTop: 10,
           display: "flex",
           justifyContent: "center",
-          textAlign: "center",
         }}
       >
         <InputForm />

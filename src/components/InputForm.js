@@ -41,8 +41,7 @@ function InputForm() {
                 height: 30,
                 marginTop: 10,
                 backgroundColor: "white",
-                border: 1,
-                borderRadius: 3,
+                border: 0,
               }}
             >
               connect
@@ -55,6 +54,7 @@ function InputForm() {
                   height: 30,
                   marginTop: 10,
                   backgroundColor: "white",
+                  border: 0,
                 }}
               >
                 connect

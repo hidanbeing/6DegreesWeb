@@ -41,9 +41,8 @@ function HeaderMobile() {
           src={listIcon}
         ></img>
       </div>
-      {true ? (
+      {open ? (
         <div
-          onMouseUp={() => setOpen(true)}
           style={{
             backgroundColor: "#EFECEC",
             width: 110,

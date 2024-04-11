@@ -2,14 +2,10 @@ import { useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import ResultDiv from "../components/ResultDiv";
 function Details() {
+  const [loading, setLoading] = useState(true);
   const [searchParams] = useSearchParams();
-  console.log({
-    actor1: searchParams.get("cast1"),
-    actor2: searchParams.get("cast2"),
-  });
-
   const [myData, setData] = useState([]);
   const [isData, setIsData] = useState(false);
   useEffect(() => {
@@ -20,60 +16,36 @@ function Details() {
         )}&cast2=${searchParams.get("cast2")}`
       )
       .then((result) => {
-        setData(result.data);
-        console.log(result.data);
+        setData(result.data.result);
+        // console.log(result.data.result);
         setIsData(true);
+        setLoading(false);
       })
       .catch(() => {});
   }, []);
 
   return (
-    <div>
+    <>
       <Header />
-      <div
-        className="castDiv"
-        style={{
-          display: "flex",
-          backgroundColor: "#C18291",
-          fontSize: 20,
-          width: 130,
-          height: 50,
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 10,
-        }}
-      ></div>
-      {/* {isData ? myData.cast1.name : null} */}
-      {/* {myData.cast1.name} */}
-      <div
-        className="movieDiv"
-        style={{
-          backgroundColor: "#6E8F8E",
-          display: "flex",
-          fontSize: 20,
-          width: 130,
-          height: 50,
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 10,
-        }}
-      ></div>
-      {/* {isData ? myData.movie1.name : null} */}
-      <div
-        className="castDiv"
-        style={{
-          display: "flex",
-          backgroundColor: "#C18291",
-          fontSize: 20,
-          width: 130,
-          height: 50,
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 10,
-        }}
-      ></div>
-      {/* {isData ? myData.cast2.name : null} */}
-    </div>
+      {!loading ? (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            marginLeft: "10%",
+            paddingTop: 10,
+            border: 1,
+          }}
+        >
+          <ResultDiv type={"cast"} name={myData.people1.name} />
+          <ResultDiv type={"movie"} name={myData.movie1.name} />
+          <ResultDiv type={"cast"} name={myData.people2.name} />
+        </div>
+      ) : (
+        "loading"
+      )}
+    </>
   );
 }
 

@@ -1,34 +1,21 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-
-const actorList = [
-  "공유",
-  "공명",
-  "권상우",
-  "곽동연",
-  "김남길",
-  "김대명",
-  "김범",
-  "나영석",
-  "나나",
-  "김아중",
-  "강경준",
-  "강계식",
-  "강기영",
-  "강남길",
-  "강동원",
-  "강민혁",
-  "강봉성",
-  "강석우",
-  "강성민",
-  "황정민",
-  "정우",
-];
+import axios from "axios";
 
 const InputActor = ({ inputValue, setInputValue }) => {
+  const [actorList, setActorList] = useState([]);
   const [isHaveInputValue, setIsHaveInputValue] = useState(false);
   const [dropDownList, setDropDownList] = useState(actorList);
   const [dropDownItemIndex, setDropDownItemIndex] = useState(-1);
+
+  useEffect(() => {
+    axios
+      .get(`https://72f760c0-57c4-4d93-a3ff-bed9f02b3483.mock.pstmn.io/`)
+      .then((result) => {
+        setActorList(result.data.actors);
+      })
+      .catch(() => {});
+  }, []);
 
   const showDropDownList = () => {
     if (inputValue === "") {
@@ -148,7 +135,7 @@ const DeleteButton = styled.div`
 
 const DropDownBox = styled.ul`
   display: block;
-  width: 68%;
+  width: 65%;
   margin: 0 auto;
   padding: 8px 0;
   background-color: white;
@@ -158,7 +145,7 @@ const DropDownBox = styled.ul`
   list-style-type: none;
   height: expression(this.scrollHeight > 99 ? "100px": "auto");
   max-height: 100px;
-  overflow: scroll;
+  overflow: auto;
 `;
 
 const DropDownItem = styled.li`

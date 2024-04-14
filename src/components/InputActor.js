@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { actors } from "../components/actors";
 
 const InputActor = ({ inputValue, setInputValue }) => {
   const [actorList, setActorList] = useState([]);
@@ -9,12 +10,7 @@ const InputActor = ({ inputValue, setInputValue }) => {
   const [dropDownItemIndex, setDropDownItemIndex] = useState(-1);
 
   useEffect(() => {
-    axios
-      .get(`https://72f760c0-57c4-4d93-a3ff-bed9f02b3483.mock.pstmn.io/`)
-      .then((result) => {
-        setActorList(result.data.actors);
-      })
-      .catch(() => {});
+    setActorList(actors);
   }, []);
 
   const showDropDownList = () => {
@@ -102,13 +98,14 @@ const WholeBox = styled.div`
   flex-direction: column;
   align-items: center;
   height: 145px;
+  // width: 300px;
 `;
 
 const InputBox = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px;
-  width: 60%;
+  width: 190px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   position: relative;
   background-color: white;
@@ -126,7 +123,7 @@ const Input = styled.input`
   border: none;
   outline: none;
   font-size: 16px;
-  width: 60%;
+  width: 190px;
 `;
 
 const DeleteButton = styled.div`
@@ -135,7 +132,7 @@ const DeleteButton = styled.div`
 
 const DropDownBox = styled.ul`
   display: block;
-  width: 65%;
+  width: 210px;
   margin: 0 auto;
   padding: 8px 0;
   background-color: white;
@@ -150,7 +147,6 @@ const DropDownBox = styled.ul`
 
 const DropDownItem = styled.li`
   padding: 0 10px;
-
   &.selected {
     background-color: lightgray;
   }

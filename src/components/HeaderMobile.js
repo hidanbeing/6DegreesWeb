@@ -22,6 +22,7 @@ function HeaderMobile() {
               fontSize: 30,
               paddingLeft: 20,
               color: "black",
+              fontFamily: "Song Myung",
             }}
           >
             6DegreesMovieWeb 🎥

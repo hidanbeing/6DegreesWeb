@@ -10,15 +10,17 @@ function HeaderDesktop() {
         position: "relative",
         borderWidth: 1,
         borderStyle: "solid",
+        justifyContent: "center",
+        // backgroundColor: "#dcdcdc",
       }}
     >
       <div>
         <Link to={`/`} style={{ textDecoration: "none" }}>
           <h1
             style={{
-              fontSize: 30,
-              paddingLeft: 50,
+              fontSize: 32,
               color: "black",
+              fontFamily: "Song Myung",
             }}
           >
             6DegreesMovieWeb 🎥

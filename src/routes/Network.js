@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import ActorGraph from "../components/ActorGraph";
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 function Network() {
   const [input, setInput] = useState("황정민");
@@ -25,6 +26,7 @@ function Network() {
         </form>
       </div>
       <ActorGraph />
+      <Footer />
     </>
   );
 }

@@ -3,27 +3,28 @@ import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ResultDiv from "../components/ResultDiv";
+import Footer from "../components/Footer";
+
 function Details() {
   const [loading, setLoading] = useState(true);
   const [searchParams] = useSearchParams();
   const [myData, setData] = useState([]);
-  const [isData, setIsData] = useState(false);
+  // const [isData, setIsData] = useState(false);
   // console.log(searchParams.get("cast2"));
   useEffect(() => {
     axios
       .get(
-        `https://72f760c0-57c4-4d93-a3ff-bed9f02b3483.mock.pstmn.io/degrees?cast1=${searchParams.get(
+        `https://tkqbzk9yo6.execute-api.ap-northeast-2.amazonaws.com/New_Stage?actor1=${searchParams.get(
           "cast1"
-        )}&cast2=${searchParams.get("cast2")}`
+        )}&actor2=${searchParams.get("cast2")}`
       )
       .then((result) => {
-        // console.log(result.data);
-
-        setData(result.data.result);
-        setIsData(true);
+        console.log(result.data);
+        setData(result.data);
         setLoading(false);
       })
       .catch(() => {});
+    // setData(["마동석", "부산행", "공유", "영화", "아이유"]);
   }, []);
 
   return (
@@ -35,18 +36,25 @@ function Details() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            marginLeft: "10%",
+            alignItems: "center",
             paddingTop: 10,
             border: 1,
           }}
         >
+          {console.log(myData.length)}
+          {myData.length === 5 ? <div></div> : null}
           <ResultDiv type={"cast"} name={myData[0]} />
           <ResultDiv type={"movie"} name={myData[1]} />
           <ResultDiv type={"cast"} name={myData[2]} />
+          <ResultDiv type={"movie"} name={myData[3]} />
+          <ResultDiv type={"cast"} name={myData[4]} />
+          <ResultDiv type={"movie"} name={myData[5]} />
+          <ResultDiv type={"cast"} name={myData[6]} />
         </div>
       ) : (
         "loading"
       )}
+      <Footer />
     </>
   );
 }

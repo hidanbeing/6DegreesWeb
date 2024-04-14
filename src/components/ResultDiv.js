@@ -11,10 +11,9 @@ function ResultDiv({ type, name }) {
         justifyContent: "center",
         alignItems: "center",
         marginBottom: 30,
-        opacity: 0.8,
       }}
     >
-      <p style={{ opacity: 1, color: "black", fontSize: 18 }}>{name}</p>
+      <p style={{ color: "black", fontSize: 18 }}>{name}</p>
     </div>
   );
 }

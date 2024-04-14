@@ -24,7 +24,7 @@ function Header() {
         <HeaderDesktop />
       </Desktop>
       <Tablet>
-        <HeaderDesktop />
+        <HeaderMobile />
       </Tablet>
       <Mobile>
         <HeaderMobile />

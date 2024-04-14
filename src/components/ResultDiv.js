@@ -6,7 +6,6 @@ function ResultDiv({ type, name }) {
         display: "flex",
         backgroundColor: color,
         fontSize: 20,
-        width: 120,
         height: 40,
         justifyContent: "center",
         alignItems: "center",

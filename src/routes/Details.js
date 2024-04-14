@@ -42,14 +42,78 @@ function Details() {
           }}
         >
           {console.log(myData.length)}
-          {myData.length === 5 ? <div></div> : null}
-          <ResultDiv type={"cast"} name={myData[0]} />
-          <ResultDiv type={"movie"} name={myData[1]} />
-          <ResultDiv type={"cast"} name={myData[2]} />
-          <ResultDiv type={"movie"} name={myData[3]} />
-          <ResultDiv type={"cast"} name={myData[4]} />
-          <ResultDiv type={"movie"} name={myData[5]} />
-          <ResultDiv type={"cast"} name={myData[6]} />
+          {myData.length === 3 ? (
+            <div>
+              <ResultDiv type={"cast"} name={myData[0]} />
+              <ResultDiv type={"movie"} name={myData[1]} />
+              <ResultDiv type={"cast"} name={myData[2]} />
+            </div>
+          ) : null}
+          {myData.length === 5 ? (
+            <div>
+              <ResultDiv type={"cast"} name={myData[0]} />
+              <ResultDiv type={"movie"} name={myData[1]} />
+              <ResultDiv type={"cast"} name={myData[2]} />
+              <ResultDiv type={"movie"} name={myData[3]} />
+              <ResultDiv type={"cast"} name={myData[4]} />
+            </div>
+          ) : null}
+          {myData.length === 7 ? (
+            <div>
+              <ResultDiv type={"cast"} name={myData[0]} />
+              <ResultDiv type={"movie"} name={myData[1]} />
+              <ResultDiv type={"cast"} name={myData[2]} />
+              <ResultDiv type={"movie"} name={myData[3]} />
+              <ResultDiv type={"cast"} name={myData[4]} />
+              <ResultDiv type={"movie"} name={myData[5]} />
+              <ResultDiv type={"cast"} name={myData[6]} />
+            </div>
+          ) : null}
+          {myData.length === 9 ? (
+            <div>
+              <ResultDiv type={"cast"} name={myData[0]} />
+              <ResultDiv type={"movie"} name={myData[1]} />
+              <ResultDiv type={"cast"} name={myData[2]} />
+              <ResultDiv type={"movie"} name={myData[3]} />
+              <ResultDiv type={"cast"} name={myData[4]} />
+              <ResultDiv type={"movie"} name={myData[5]} />
+              <ResultDiv type={"cast"} name={myData[6]} />
+              <ResultDiv type={"movie"} name={myData[7]} />
+              <ResultDiv type={"cast"} name={myData[8]} />
+            </div>
+          ) : null}
+          {myData.length === 11 ? (
+            <div>
+              <ResultDiv type={"cast"} name={myData[0]} />
+              <ResultDiv type={"movie"} name={myData[1]} />
+              <ResultDiv type={"cast"} name={myData[2]} />
+              <ResultDiv type={"movie"} name={myData[3]} />
+              <ResultDiv type={"cast"} name={myData[4]} />
+              <ResultDiv type={"movie"} name={myData[5]} />
+              <ResultDiv type={"cast"} name={myData[6]} />
+              <ResultDiv type={"movie"} name={myData[7]} />
+              <ResultDiv type={"cast"} name={myData[8]} />
+              <ResultDiv type={"movie"} name={myData[9]} />
+              <ResultDiv type={"cast"} name={myData[10]} />
+            </div>
+          ) : null}
+          {myData.length === 13 ? (
+            <div>
+              <ResultDiv type={"cast"} name={myData[0]} />
+              <ResultDiv type={"movie"} name={myData[1]} />
+              <ResultDiv type={"cast"} name={myData[2]} />
+              <ResultDiv type={"movie"} name={myData[3]} />
+              <ResultDiv type={"cast"} name={myData[4]} />
+              <ResultDiv type={"movie"} name={myData[5]} />
+              <ResultDiv type={"cast"} name={myData[6]} />
+              <ResultDiv type={"movie"} name={myData[7]} />
+              <ResultDiv type={"cast"} name={myData[8]} />
+              <ResultDiv type={"movie"} name={myData[9]} />
+              <ResultDiv type={"cast"} name={myData[10]} />
+              <ResultDiv type={"movie"} name={myData[11]} />
+              <ResultDiv type={"cast"} name={myData[12]} />
+            </div>
+          ) : null}
         </div>
       ) : (
         "loading"

@@ -4,7 +4,9 @@ import Details from "./routes/Details";
 import Introduction from "./routes/Introduction";
 import Network from "./routes/Network";
 import Contact from "./routes/Contact";
+
 import "./css/app.css";
+
 function App() {
   return (
     <Router>

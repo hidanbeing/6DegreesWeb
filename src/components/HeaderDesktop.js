@@ -8,10 +8,8 @@ function HeaderDesktop() {
         display: "flex",
         flexDirection: "row",
         position: "relative",
-        borderWidth: 1,
-        borderStyle: "solid",
         justifyContent: "center",
-        // backgroundColor: "#dcdcdc",
+        // fontFamily: "Diphylleia",
       }}
     >
       <div>
@@ -20,10 +18,9 @@ function HeaderDesktop() {
             style={{
               fontSize: 32,
               color: "black",
-              fontFamily: "Song Myung",
             }}
           >
-            6DegreesMovieWeb 🎥
+            🎥 6DegreesMovieWeb 🎥
           </h1>
         </Link>
       </div>

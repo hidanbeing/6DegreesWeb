@@ -6,13 +6,27 @@ function ResultDiv({ type, name }) {
         display: "flex",
         backgroundColor: color,
         fontSize: 20,
-        height: 40,
+        // width: 200,
+        // height: 40,
         justifyContent: "center",
         alignItems: "center",
-        marginBottom: 30,
+        marginBottom: 15,
       }}
     >
-      <p style={{ color: "black", fontSize: 18 }}>{name}</p>
+      <p
+        style={{
+          color: "black",
+          fontSize: 15,
+          paddingLeft: 20,
+          paddingRight: 20,
+        }}
+        onClick={() => window.open(`https://namu.wiki/w/${name}`)}
+      >
+        {type === "cast" ? "" : "🎞️ "}
+        {name}
+        {type === "cast" ? "" : " 🎞️"}
+      </p>
+      <div></div>
     </div>
   );
 }

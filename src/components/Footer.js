@@ -6,7 +6,7 @@ function Footer() {
         right: 20,
       }}
     >
-      © 2024. LeeDanbee KwonBowon Choinagyeong All rights reserved.
+      © 2024. LeeDanbee KwonBowon ChoiNagyeong All rights reserved.
     </div>
   );
 }

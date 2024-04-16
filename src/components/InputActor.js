@@ -105,6 +105,7 @@ const InputBox = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px;
+  padding-right: 20px;
   width: 190px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   position: relative;
@@ -124,6 +125,7 @@ const Input = styled.input`
   outline: none;
   font-size: 16px;
   width: 190px;
+  // padding-left: 20px;
 `;
 
 const DeleteButton = styled.div`
@@ -132,7 +134,7 @@ const DeleteButton = styled.div`
 
 const DropDownBox = styled.ul`
   display: block;
-  width: 210px;
+  width: 220px;
   margin: 0 auto;
   padding: 8px 0;
   background-color: white;

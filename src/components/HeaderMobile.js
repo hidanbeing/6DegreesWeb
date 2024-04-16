@@ -11,8 +11,7 @@ function HeaderMobile() {
         display: "flex",
         flexDirection: "row",
         position: "relative",
-        borderWidth: 1,
-        borderStyle: "solid",
+        // fontFamily: "Diphylleia",
       }}
     >
       <div>
@@ -22,7 +21,6 @@ function HeaderMobile() {
               fontSize: 30,
               paddingLeft: 20,
               color: "black",
-              fontFamily: "Song Myung",
             }}
           >
             6DegreesMovieWeb 🎥

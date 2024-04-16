@@ -2,6 +2,7 @@ import { useState } from "react";
 import InputActor from "../components/InputActor";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { actors } from "./actors";
 
 function InputForm() {
   const [actor1, setActor1] = useState("");
@@ -11,8 +12,9 @@ function InputForm() {
     <>
       <InputFromBox
         style={{
-          borderRadius: 10,
+          // borderRadius: 5,
           position: "relative",
+          // fontFamily: "Diphylleia",
         }}
       >
         <div
@@ -33,20 +35,7 @@ function InputForm() {
             justifyContent: "center",
           }}
         >
-          {actor1 === "" || actor2 === "" ? (
-            <button
-              onClick={() => alert("배우를 다시입력하세요")}
-              style={{
-                width: 60,
-                height: 30,
-                marginTop: 10,
-                backgroundColor: "white",
-                border: 0,
-              }}
-            >
-              connect
-            </button>
-          ) : (
+          {actors.includes(actor1) && actors.includes(actor2) ? (
             <Link to={`/degrees?cast1=${actor1}&cast2=${actor2}`}>
               <button
                 style={{
@@ -60,6 +49,19 @@ function InputForm() {
                 connect
               </button>
             </Link>
+          ) : (
+            <button
+              onClick={() => alert("배우를 다시입력하세요")}
+              style={{
+                width: 60,
+                height: 30,
+                marginTop: 10,
+                backgroundColor: "white",
+                border: 0,
+              }}
+            >
+              connect
+            </button>
           )}
         </div>
       </InputFromBox>
@@ -72,9 +74,8 @@ const InputFromBox = styled.div`
   flex-direction: column;
   width: 400px;
   height: 460px;
-  border: 0px solid black;
-  background-color: #f0f0f0;
-  box-shadow: 0px 0px 5px gray;
+  background-color: #f1efef;
+  border: 1px solid #b4b4b8;
 `;
 
 export default InputForm;

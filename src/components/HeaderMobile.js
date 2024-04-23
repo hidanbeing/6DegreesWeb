@@ -27,7 +27,7 @@ function HeaderMobile() {
           </h1>
         </Link>
       </div>
-      <div onClick={() => setOpen(true)} onMouseOut={() => setOpen(false)}>
+      <div onClick={() => setOpen(!open)}>
         <img
           style={{
             width: 30,
@@ -43,15 +43,15 @@ function HeaderMobile() {
       {open ? (
         <div
           style={{
-            backgroundColor: "#EFECEC",
-            width: 110,
-            height: 130,
+            backgroundColor: "white",
+            width: 120,
+
             position: "fixed",
             right: 9,
             top: 90,
             zIndex: 100,
-            padding: 5,
-            boxShadow: "5px 0px 10px #EFECEC",
+            // padding: 5,
+            boxShadow: "5px 10px 15px #EFECEC",
             textAlign: "center",
           }}
         >
@@ -72,8 +72,8 @@ function HeaderMobile() {
 
 const DivRoute = styled.p`
   color: black;
-  pading-bottom: 5;
-  border-bottom: solid 1px black;
+  border-bottom: solid 0.1px black;
+  margin: 20px;
   &:hover {
     color: #b4b4b8;
   }

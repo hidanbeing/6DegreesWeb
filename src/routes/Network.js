@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import ActorGraph from "../components/ActorGraph";
 import { useState } from "react";
 import Footer from "../components/Footer";
+import NetworkActor from "../components/network-components/NetworkActor";
 
 function Network() {
   const [input, setInput] = useState("황정민");
@@ -13,7 +14,12 @@ function Network() {
   return (
     <>
       <Header />
-      <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <form>
           배우 : <input value={input} onChange={onChage}></input>
           <button
@@ -25,7 +31,15 @@ function Network() {
           </button>
         </form>
       </div>
-      <ActorGraph />
+      {/* <ActorGraph /> */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <NetworkActor />
+      </div>
       <Footer />
     </>
   );

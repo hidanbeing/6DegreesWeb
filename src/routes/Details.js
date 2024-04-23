@@ -5,8 +5,8 @@ import axios from "axios";
 import ResultDiv from "../components/ResultDiv";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
-
 import "../css/app.css";
+import { Helmet } from "react-helmet-async";
 
 function Details() {
   const [loading, setLoading] = useState(true);
@@ -46,6 +46,9 @@ function Details() {
 
   return (
     <>
+      <Helmet>
+        <meta name="google-adsense-account" content="ca-pub-2590867190158667" />
+      </Helmet>
       <Header />
       {!loading ? (
         <div

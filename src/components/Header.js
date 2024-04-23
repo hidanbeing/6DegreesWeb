@@ -20,11 +20,6 @@ const Mobile = ({ children }) => {
 function Header() {
   return (
     <>
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2590867190158667"
-        crossorigin="anonymous"
-      ></script>
       <Desktop>
         <HeaderDesktop />
       </Desktop>

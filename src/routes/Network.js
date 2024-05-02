@@ -3,6 +3,8 @@ import ActorGraph from "../components/ActorGraph";
 import { useState } from "react";
 import Footer from "../components/Footer";
 import NetworkActor from "../components/network-components/NetworkActor";
+// import "../css/Network.css";
+// import { NetworkGraph } from "../components/network-components/NetworkGraph";
 
 function Network() {
   const [input, setInput] = useState("황정민");
@@ -14,32 +16,15 @@ function Network() {
   return (
     <>
       <Header />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
+      <div className="network-main">
         <form>
           배우 : <input value={input} onChange={onChage}></input>
-          <button
-            style={{
-              marginLeft: 10,
-            }}
-          >
-            선택
-          </button>
+          <button className="network-btn">선택</button>
         </form>
+        {/* <NetworkActor /> */}
+        {/* <NetworkGraph actor={input} /> */}
       </div>
-      {/* <ActorGraph /> */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <NetworkActor />
-      </div>
+
       <Footer />
     </>
   );

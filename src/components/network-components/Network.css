@@ -1,0 +1,43 @@
+.network-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    font-size: 30px;    
+    font-weight: 1000;
+    margin: 20px;
+}
+.input-form{
+    display: flex;
+    flex-direction: row;
+}
+
+.input-form-btn{
+    height: 30px;
+    width: 50px;
+}
+.network-img-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: 90%;
+    border-radius: 30px;
+
+}
+.network-img-div-main{
+
+}
+
+.network-img-div-images{
+
+}
+
+.img{
+    width: 120px;
+    /* height: 200px; */
+    /* border-radius: 500px; */
+    margin: 30px;
+}

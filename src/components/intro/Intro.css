@@ -1,0 +1,32 @@
+.intro-div{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: #EDEBEB;
+    height: 100%;
+}
+.intro-div-text{
+    margin: 30px 60px 0px 60px;
+    color: black;
+    opacity: 1;
+    transition: opacity 1s ease ;
+    font-size: 20px;
+}
+
+
+.intro-img{
+    margin-top: 30px;
+    width: 650px;
+    opacity: 1;
+    transition: opacity 3s ease ;
+}
+
+@starting-style{
+    .intro-div-text{
+    opacity: 0;
+    }
+    .intro-img{
+        opacity: 0;
+        }
+}

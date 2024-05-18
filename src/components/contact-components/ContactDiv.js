@@ -3,17 +3,19 @@ import hwang from "../../image/hwang.png";
 function ContactDiv({ width, height, name, email, phoneNumber, github, tf }) {
   return (
     <>
-      <div
+      {/* <div
         style={{
           width: width,
           height: height,
-          backgroundColor: "white",
+          backgroundColor: "#111111",
           margin: 30,
           display: "flex",
           flexDirection: tf ? "column" : "row",
           alignItems: "center",
           padding: 20,
           border: "solid 1px",
+          color: "white",
+          borderRadius: "10px",
         }}
       >
         <img
@@ -39,7 +41,7 @@ function ContactDiv({ width, height, name, email, phoneNumber, github, tf }) {
         </div>
 
         <br />
-      </div>
+      </div> */}
     </>
   );
 }

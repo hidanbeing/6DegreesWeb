@@ -1,11 +1,10 @@
 import { useSearchParams } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ResultDiv from "../components/ResultDiv";
 import Footer from "../components/Footer";
-import Loading from "../components/Loading";
-import "../css/app.css";
+import Loading from "../components/loading/Loading";
 import { Helmet } from "react-helmet-async";
 
 function Details() {

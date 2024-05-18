@@ -4,6 +4,9 @@ function Footer() {
       style={{
         position: "fixed",
         right: 20,
+        bottom: 5,
+        color: "white",
+        fontSize: 12,
       }}
     >
       © 2024. LeeDanbee KwonBowon ChoiNagyeong All rights reserved.

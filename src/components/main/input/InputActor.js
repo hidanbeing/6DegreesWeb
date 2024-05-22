@@ -98,7 +98,7 @@ const WholeBox = styled.div`
   flex-direction: column;
   align-items: center;
   height: 145px;
-  // width: 300px;
+  margin: 0px;
 `;
 
 const InputBox = styled.div`

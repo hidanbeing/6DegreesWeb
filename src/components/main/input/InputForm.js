@@ -12,7 +12,6 @@ function InputForm() {
     <>
       <div className="input-field-div">
         <InputActor inputValue={actor1} setInputValue={setActor1} />
-
         <InputActor inputValue={actor2} setInputValue={setActor2} />
         <div
           style={{
@@ -22,14 +21,14 @@ function InputForm() {
         >
           {actors.includes(actor1) && actors.includes(actor2) ? (
             <Link to={`/degrees?cast1=${actor1}&cast2=${actor2}`}>
-              <button className="input-field-btn">connect</button>
+              <button className="input-field-btn">Connect</button>
             </Link>
           ) : (
             <button
               onClick={() => alert("배우를 다시입력하세요")}
               className="input-field-btn"
             >
-              connect
+              Connect
             </button>
           )}
         </div>

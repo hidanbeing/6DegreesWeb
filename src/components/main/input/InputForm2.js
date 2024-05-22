@@ -18,7 +18,7 @@ function InputForm2() {
         <div className="input-field-div-btn">
           {actors.includes(actor1) && actors.includes(actor2) ? (
             <Link to={`/degrees?cast1=${actor1}&cast2=${actor2}`}>
-              <button className="input-field-btn">connect</button>
+              <button className="input-field-btn">Connect</button>
             </Link>
           ) : (
             <button

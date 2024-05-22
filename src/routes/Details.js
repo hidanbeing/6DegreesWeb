@@ -37,17 +37,21 @@ function Details() {
         )}&actor2=${searchParams.get("cast2")}`
       )
       .then((result) => {
+        if (result.data === null) {
+          window.confirm("결과를 찾을 수 없습니다.");
+          window.history.go(-1);
+        }
         setData(result.data);
         setLoading(false);
       })
-      .catch(() => {});
+      .catch((err) => {
+        window.confirm("결과를 찾을 수 없습니다.");
+        window.history.go(-1);
+      });
   }, []);
 
   return (
     <>
-      <Helmet>
-        <meta name="google-adsense-account" content="ca-pub-2590867190158667" />
-      </Helmet>
       <Header />
       {!loading ? (
         <div

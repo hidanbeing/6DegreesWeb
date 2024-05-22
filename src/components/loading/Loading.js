@@ -3,7 +3,7 @@ import "./loading.css";
 function Loading() {
   return (
     <div className="loading-div">
-      <img src={Spinner} width="5%"></img>
+      <img src={Spinner} width="80px"></img>
     </div>
   );
 }

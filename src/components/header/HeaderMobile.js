@@ -12,11 +12,11 @@ function HeaderMobile() {
           <div className="header-title">6DegreesMovieWeb🎥</div>
         </Link>
       </div>
-      <div onClick={() => setOpen(!open)}>
+      <div onClick={() => setOpen(!open)} onMouseOut={() => setOpen(false)}>
         <PiListLight className="header-menu-icon" size={30} color="black" />
       </div>
       {open ? (
-        <div className="header-menu-div" onMouseOut={() => setOpen(false)}>
+        <div className="header-menu-div">
           <Link to={`/introduction`} style={{ textDecoration: "none" }}>
             <DivRoute>Introduction</DivRoute>
           </Link>

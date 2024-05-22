@@ -16,7 +16,7 @@ function HeaderMobile() {
         <PiListLight className="header-menu-icon" size={30} color="black" />
       </div>
       {open ? (
-        <div className="header-menu-div">
+        <div className="header-menu-div" onMouseOut={() => setOpen(false)}>
           <Link to={`/introduction`} style={{ textDecoration: "none" }}>
             <DivRoute>Introduction</DivRoute>
           </Link>

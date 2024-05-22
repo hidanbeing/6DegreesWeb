@@ -8,7 +8,15 @@
     font-size: 30px;    
     font-weight: 1000;
     margin: 20px;
+    background-color: #D5D8D4;
+    width: 250px;
+    text-align: center;
+    justify-content: center;
+    height: 50px;
+    box-shadow: 2px 2px 2px lightgray;
+    border-radius: 5px;
 }
+
 .input-form{
     display: flex;
     flex-direction: row;
@@ -17,14 +25,16 @@
 .input-form-btn{
     height: 30px;
     width: 50px;
+    margin-top: 16px;
 }
 .network-img-div{
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid black;
-    width: 90%;
+    width: 1200px;
     border-radius: 30px;
+    /* background-color: green; */
 
 }
 .network-img-div-main{
@@ -32,12 +42,43 @@
 }
 
 .network-img-div-images{
-
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
 }
 
 .img{
+    width: 100px;
+    /* height: 200px; */
+    border-radius: 10px;
+}
+
+
+.network-img-div-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 20px 30px 20px;
+    width: 140px;
+    height: 180px;
+    border-radius: 10px;
+}
+.network-mainimg-div-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 30px 5px 30px;
+    width: 160px;
+    height: 230px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.main-img{
     width: 120px;
     /* height: 200px; */
-    /* border-radius: 500px; */
-    margin: 30px;
+    border-radius: 10px;
+    /* margin: 10px 30px 10px 30px; */
 }

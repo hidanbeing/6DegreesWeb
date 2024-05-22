@@ -25,7 +25,7 @@ function InputForm2() {
               className="input-field-btn"
               onClick={() => alert("배우를 다시입력하세요")}
             >
-              connect
+              Connect
             </button>
           )}
         </div>

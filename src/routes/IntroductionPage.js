@@ -1,14 +1,15 @@
 import Header from "../components/header/Header";
 import Footer from "../components/Footer";
-import Intro from "../components/intro/Intro";
-function Introduction() {
+import Introduction from "../components/intro/Introduction";
+
+function IntroductionPage() {
   return (
     <>
       <Header />
-      <Intro />
+      <Introduction />
       <Footer />
     </>
   );
 }
 
-export default Introduction;
+export default IntroductionPage;

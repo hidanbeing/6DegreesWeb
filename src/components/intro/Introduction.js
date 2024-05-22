@@ -1,8 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import MainDesktop from "./MainDesktop";
-import MainMobile from "./MainMobile";
-import "./Main.css";
-
+import { IntroDeskTop, IntroMobile } from "./Intro";
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 });
   return isDesktop ? children : null;
@@ -18,20 +15,20 @@ const Mobile = ({ children }) => {
   return isMobile ? children : null;
 };
 
-function Main() {
+function Introduction() {
   return (
     <>
       <Desktop>
-        <MainDesktop />
+        <IntroDeskTop />
       </Desktop>
       <Tablet>
-        <MainDesktop />
+        <IntroDeskTop />
       </Tablet>
       <Mobile>
-        <MainMobile />
+        <IntroMobile />
       </Mobile>
     </>
   );
 }
 
-export default Main;
+export default Introduction;

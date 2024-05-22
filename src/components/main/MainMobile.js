@@ -1,6 +1,6 @@
 import InputForm from "./input/InputForm";
 import hwang from "../../image/hwang.png";
-import mainimage from "../../image/maingroup.png";
+import mainimage from "../../image/maingroupmobile.png";
 
 function MainMobile() {
   return (

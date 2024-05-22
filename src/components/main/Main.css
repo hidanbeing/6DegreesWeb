@@ -1,20 +1,18 @@
 .main-div{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     opacity: 1;
     transition: opacity 1s ease ;
     background-color: #EDEBEB;
-    height: 100%;
+
 }
 
 
 .main-div-mobile{
+    margin: 0;
     display: flex;
-    width: 100vw;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     align-content: center;
     opacity: 1;
@@ -44,12 +42,12 @@
 .main-title-mobile{
     margin: 30px 0px 10px 0px;
     color: black;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 1000;
 }
 .main-subtitle{
     color:black;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 200;
 }
 
@@ -76,11 +74,11 @@
 .input-field-btn{
     width: 160px;
     height: 40px;
-    /* background-color: #A9A9A9; */
     color: black;
     border: 1px solid darkgray;
     background-color: #AAB2A8;
     border-radius: 20px;
+    font-weight: 500;
 }
 
 .main-img-div{
@@ -95,8 +93,8 @@
 }
 
 .main-image-moblie{
-    width: 600px;
+    width: 300px;
     opacity: 1;
     transition: opacity 10s ease ;
-    margin-top: -30;
+    /* margin-top: -30; */
 }

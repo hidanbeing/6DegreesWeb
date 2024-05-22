@@ -3,7 +3,7 @@ function Footer() {
     <div
       style={{
         position: "fixed",
-        right: 20,
+        right: 1,
         bottom: 5,
         color: "white",
         fontSize: 12,

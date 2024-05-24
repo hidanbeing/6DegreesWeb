@@ -25,7 +25,7 @@ function Main() {
         <MainDesktop />
       </Desktop>
       <Tablet>
-        <MainDesktop />
+        <MainMobile />
       </Tablet>
       <Mobile>
         <MainMobile />

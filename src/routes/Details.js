@@ -5,7 +5,6 @@ import axios from "axios";
 import ResultDiv from "../components/ResultDiv";
 import Footer from "../components/Footer";
 import Loading from "../components/loading/Loading";
-import { Helmet } from "react-helmet-async";
 
 function Details() {
   const [loading, setLoading] = useState(true);

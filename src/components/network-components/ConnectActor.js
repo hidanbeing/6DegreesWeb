@@ -4,7 +4,11 @@ import { movie } from "./tmpdata";
 import axios from "axios";
 import { TMDB_API_KEY } from "../../Config";
 import InputActor from "../main/input/InputActor";
-import lines from "../../image/lines.png";
+import line1 from "../../image/line1.png";
+import line2 from "../../image/line2.png";
+import line3 from "../../image/line3.png";
+import line4 from "../../image/line4.png";
+import line5 from "../../image/line5.png";
 import noimg from "../../image/noimg.jpeg";
 
 export const ConnectActor = () => {
@@ -29,11 +33,9 @@ export const ConnectActor = () => {
     var arr2 = [];
     for (const element of data) {
       arr1.push(element.actor);
-    }
-    setNetworkImgName(arr1);
-    for (const element of data) {
       arr2.push(element.movieName);
     }
+    setNetworkImgName(arr1);
     setNetworkmovie(arr2);
   };
 
@@ -53,6 +55,7 @@ export const ConnectActor = () => {
   }, [name]);
 
   useEffect(() => {
+    setNetworkImgUrl([]);
     axios
       .get(
         `https://8voa49c8ee.execute-api.ap-northeast-2.amazonaws.com/default/?actor=${name}`
@@ -62,7 +65,6 @@ export const ConnectActor = () => {
           window.confirm("결과를 찾을 수 없습니다.");
         }
         setData(result.data);
-        setNetworkImgUrl([]);
       })
       .catch((err) => {
         window.confirm("결과를 찾을 수 없습니다.");
@@ -76,7 +78,6 @@ export const ConnectActor = () => {
   useEffect(() => {
     if (networkImgName.length !== 0 && networkImgName[0] !== undefined) {
       for (const name of networkImgName) {
-        console.log(name);
         axios
           .get(
             `https://api.themoviedb.org/3/search/person?api_key=${TMDB_API_KEY}&page=1&query=${name}&language=ko-KR`
@@ -89,6 +90,8 @@ export const ConnectActor = () => {
                   "http://image.tmdb.org/t/p/w185/" +
                     response.data.results[0].profile_path,
                 ]);
+              } else {
+                setNetworkImgUrl((networkImgUrl) => [...networkImgUrl, ""]);
               }
             } else {
               setNetworkImgUrl((networkImgUrl) => [...networkImgUrl, ""]);
@@ -96,7 +99,7 @@ export const ConnectActor = () => {
           });
       }
     }
-  }, [networkImgName, networkmovie]);
+  }, [networkImgName]);
 
   useEffect(() => {});
 
@@ -124,32 +127,30 @@ export const ConnectActor = () => {
             src={mainImgUrl === "" ? noimg : mainImgUrl}
           />
         </div>
-        <div className="movie-name-div">
-          <p className="movie-name">{networkmovie[0]}</p>
-          <p className="movie-name">{networkmovie[1]}</p>
-          <p className="movie-name">{networkmovie[2]}</p>
-          <p className="movie-name">{networkmovie[3]}</p>
-          <p className="movie-name">{networkmovie[4]}</p>
-        </div>
-
-        <img className="line1-img" src={lines} width={800} />
-
+        {networkmovie.length === 1 ? (
+          <img className="line-img" src={line1} />
+        ) : null}
+        {networkmovie.length === 2 ? (
+          <img className="line-img" src={line2} />
+        ) : null}
+        {networkmovie.length === 3 ? (
+          <img className="line-img" src={line3} />
+        ) : null}
+        {networkmovie.length === 4 ? (
+          <img className="line-img" src={line4} />
+        ) : null}
+        {networkmovie.length >= 5 ? (
+          <img className="line-img" src={line5} />
+        ) : null}
         <div className="network-img-div-images">
-          <div className="network-img-div-div">
-            <img className="img" src={networkImgUrl[0]} />
-          </div>
-          <div className="network-img-div-div">
-            <img className="img" src={networkImgUrl[1]} />
-          </div>
-          <div className="network-img-div-div">
-            <img className="img" src={networkImgUrl[2]} />
-          </div>
-          <div className="network-img-div-div">
-            <img className="img" src={networkImgUrl[3]} />
-          </div>
-          <div className="network-img-div-div">
-            <img className="img" src={networkImgUrl[4]} />
-          </div>
+          {networkImgName.map((e, index) =>
+            index <= 5 ? <p className="actor-name">{e}</p> : null
+          )}
+        </div>
+        <div className="network-img-div-images">
+          {networkImgUrl.map((e, index) =>
+            index <= 5 ? <img className="img" src={e} /> : null
+          )}
         </div>
       </div>
     </div>

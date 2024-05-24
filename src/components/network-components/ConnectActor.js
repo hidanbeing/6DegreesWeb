@@ -10,7 +10,7 @@ import line3 from "../../image/line3.png";
 import line4 from "../../image/line4.png";
 import line5 from "../../image/line5.png";
 import noimg from "../../image/noimg.jpeg";
-
+import RootTree from "./tree/RootTree";
 export const ConnectActor = () => {
   // inputvalue, name은 계속 같아야함!!
 
@@ -123,17 +123,22 @@ export const ConnectActor = () => {
         ) : null}
         <div className="network-img-div-images">
           {actormovie.map((e, index) =>
-            index < 6 ? <p className="actor-name">{e.actor}</p> : null
+            index < 5 ? <p className="actor-name">{e.actor}</p> : null
           )}
         </div>
         <div className="network-img-div-images">
           {actormovie.map((e, index) =>
-            index < 6 ? <p className="actor-name">{e.movie}</p> : null
+            index < 5 ? <p className="actor-name">{e.movie}</p> : null
           )}
         </div>
         <div className="network-img-div-images">
           {actormovie.map((e, index) =>
-            index < 6 ? <img className="img" src={e.url} /> : null
+            index < 5 ? <img className="img" src={e.url} /> : null
+          )}
+        </div>
+        <div className="network-img-div-images">
+          {actormovie.map((e, index) =>
+            index < 5 ? <RootTree name={e.actor} /> : null
           )}
         </div>
       </div>

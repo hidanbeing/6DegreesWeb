@@ -20,23 +20,31 @@ export const ConnectActor = () => {
 
   const [mainImgUrl, setMainImgUrl] = useState();
 
-  const [networkImgName, setNetworkImgName] = useState([]);
-  const [networkImgUrl, setNetworkImgUrl] = useState([]);
-  const [networkmovie, setNetworkmovie] = useState([]);
+  const [actormovie, setActormovie] = useState([]);
 
   const onClick = () => {
     setName(inputvalue);
   };
 
   const networkSetting = () => {
-    var arr1 = [];
-    var arr2 = [];
+    setActormovie([]);
     for (const element of data) {
-      arr1.push(element.actor);
-      arr2.push(element.movieName);
+      axios
+        .get(
+          `https://api.themoviedb.org/3/search/person?api_key=${TMDB_API_KEY}&page=1&query=${element.actor}&language=ko-KR`
+        )
+        .then((response) => {
+          var object = new Object();
+          object.actor = element.actor;
+          object.movie = element.movieName;
+          object.url =
+            response.data.results.length !== 0
+              ? "http://image.tmdb.org/t/p/w185/" +
+                response.data.results[0].profile_path
+              : "";
+          setActormovie((e) => [...e, object]);
+        });
     }
-    setNetworkImgName(arr1);
-    setNetworkmovie(arr2);
   };
 
   useEffect(() => {
@@ -55,7 +63,6 @@ export const ConnectActor = () => {
   }, [name]);
 
   useEffect(() => {
-    setNetworkImgUrl([]);
     axios
       .get(
         `https://8voa49c8ee.execute-api.ap-northeast-2.amazonaws.com/default/?actor=${name}`
@@ -74,34 +81,6 @@ export const ConnectActor = () => {
   useEffect(() => {
     networkSetting();
   }, [data]);
-
-  useEffect(() => {
-    if (networkImgName.length !== 0 && networkImgName[0] !== undefined) {
-      for (const name of networkImgName) {
-        axios
-          .get(
-            `https://api.themoviedb.org/3/search/person?api_key=${TMDB_API_KEY}&page=1&query=${name}&language=ko-KR`
-          )
-          .then((response) => {
-            if (response.data.results.length !== 0) {
-              if (response.data.results[0].hasOwnProperty("profile_path")) {
-                setNetworkImgUrl((networkImgUrl) => [
-                  ...networkImgUrl,
-                  "http://image.tmdb.org/t/p/w185/" +
-                    response.data.results[0].profile_path,
-                ]);
-              } else {
-                setNetworkImgUrl((networkImgUrl) => [...networkImgUrl, ""]);
-              }
-            } else {
-              setNetworkImgUrl((networkImgUrl) => [...networkImgUrl, ""]);
-            }
-          });
-      }
-    }
-  }, [networkImgName]);
-
-  useEffect(() => {});
 
   return (
     <div className="network-div">
@@ -127,29 +106,34 @@ export const ConnectActor = () => {
             src={mainImgUrl === "" ? noimg : mainImgUrl}
           />
         </div>
-        {networkmovie.length === 1 ? (
+        {actormovie.length === 1 ? (
           <img className="line-img" src={line1} />
         ) : null}
-        {networkmovie.length === 2 ? (
+        {actormovie.length === 2 ? (
           <img className="line-img" src={line2} />
         ) : null}
-        {networkmovie.length === 3 ? (
+        {actormovie.length === 3 ? (
           <img className="line-img" src={line3} />
         ) : null}
-        {networkmovie.length === 4 ? (
+        {actormovie.length === 4 ? (
           <img className="line-img" src={line4} />
         ) : null}
-        {networkmovie.length >= 5 ? (
+        {actormovie.length >= 5 ? (
           <img className="line-img" src={line5} />
         ) : null}
         <div className="network-img-div-images">
-          {networkImgName.map((e, index) =>
-            index <= 5 ? <p className="actor-name">{e}</p> : null
+          {actormovie.map((e, index) =>
+            index < 6 ? <p className="actor-name">{e.actor}</p> : null
           )}
         </div>
         <div className="network-img-div-images">
-          {networkImgUrl.map((e, index) =>
-            index <= 5 ? <img className="img" src={e} /> : null
+          {actormovie.map((e, index) =>
+            index < 6 ? <p className="actor-name">{e.movie}</p> : null
+          )}
+        </div>
+        <div className="network-img-div-images">
+          {actormovie.map((e, index) =>
+            index < 6 ? <img className="img" src={e.url} /> : null
           )}
         </div>
       </div>

@@ -38,11 +38,14 @@ export const ConnectActor = () => {
           object.actor = element.actor;
           object.movie = element.movieName;
           object.url =
-            response.data.results.length !== 0
+            response.data.results.length !== 0 &&
+            response.data.results[0].profile_path !== null
               ? "http://image.tmdb.org/t/p/w185/" +
                 response.data.results[0].profile_path
-              : "";
-          setActormovie((e) => [...e, object]);
+              : " ";
+          if (object.url !== " ") {
+            setActormovie((e) => [...e, object]);
+          }
         });
     }
   };
@@ -106,7 +109,7 @@ export const ConnectActor = () => {
             src={mainImgUrl === "" ? noimg : mainImgUrl}
           />
         </div>
-        {actormovie.length === 1 ? (
+        {/* {actormovie.length === 1 ? (
           <img className="line-img" src={line1} />
         ) : null}
         {actormovie.length === 2 ? (
@@ -120,23 +123,21 @@ export const ConnectActor = () => {
         ) : null}
         {actormovie.length >= 5 ? (
           <img className="line-img" src={line5} />
-        ) : null}
-        <div className="network-img-div-images">
+        ) : null} */}
+
+        <div className="network-img-group">
           {actormovie.map((e, index) =>
-            index < 5 ? <p className="actor-name">{e.actor}</p> : null
+            index < 5 ? (
+              <div className="group">
+                <p className="movie-name">{e.movie}</p>
+                <p className="actor-name">{e.actor}</p>
+
+                <img className="img" src={e.url} />
+              </div>
+            ) : null
           )}
         </div>
-        <div className="network-img-div-images">
-          {actormovie.map((e, index) =>
-            index < 5 ? <p className="actor-name">{e.movie}</p> : null
-          )}
-        </div>
-        <div className="network-img-div-images">
-          {actormovie.map((e, index) =>
-            index < 5 ? <img className="img" src={e.url} /> : null
-          )}
-        </div>
-        <div className="network-img-div-images">
+        <div className="tree">
           {actormovie.map((e, index) =>
             index < 5 ? <RootTree name={e.actor} /> : null
           )}

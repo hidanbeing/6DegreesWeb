@@ -30,32 +30,37 @@ function RootTree(prop){
             object.actor = element.actor;
             object.movie = element.movieName;
             object.url =
-              response.data.results.length !== 0
+              response.data.results.length !== 0 &&response.data.results[0].profile_path!==null
                 ? "http://image.tmdb.org/t/p/w185/" +
                   response.data.results[0].profile_path
-                : "";
-            setActormovie((e) => [...e, object]);
+                : " ";
+                if (object.url!==" "){
+                  setActormovie((e) => [...e, object]);
+                }
           });
       }
     };
   
    
     useEffect(() => {
-        console.log(prop);
-      axios
+      if (prop.name!==undefined){
+        axios
         .get(
           `https://8voa49c8ee.execute-api.ap-northeast-2.amazonaws.com/default/?actor=${prop.name}`
         )
         .then((result) => {
-            console.log(result)
+            // console.log(result)
           if (result.data === null) {
-            // window.confirm("결과를 찾을 수 없습니다.");
+             window.confirm(prop.name,"데이터가 널임.");
           }
           setData(result.data);
         })
         .catch((err) => {
-        //   window.confirm("결과를 찾을 수 없습니다.");
+         // console.log(prop.name)
+           //window.confirm("결과를 찾을 수 없습니다.");
         });
+      }
+      
     }, []);
   
     useEffect(() => {
@@ -63,42 +68,40 @@ function RootTree(prop){
     }, [data]);
   
     return (
-      <div className="network-div">
+      <div className="tree-root">
         
   
-          {actormovie.length === 1 ? (
-            <img className="line-img" src={line1} />
+          {/* {actormovie.length === 1 ? (
+            <img className="line1-img" src={line1} />
           ) : null}
           {actormovie.length === 2 ? (
-            <img className="line-img" src={line2} />
+            <img className="line1-img" src={line2} />
           ) : null}
           {actormovie.length === 3 ? (
-            <img className="line-img" src={line3} />
+            <img className="line1-img" src={line3} />
           ) : null}
           {actormovie.length >= 4 ? (
-            <img className="line-img" src={line4} />
-          ) : null}
+            <img className="line1-img" src={line4} />
+          ) : null} */}
           
-          <div className="network-img-div-images">
-            {actormovie.map((e, index) =>
-              index < 4 ? <p className="actor-name">{e.actor}</p> : null
-            )}
-          </div>
-          <div className="network-img-div-images">
-            {actormovie.map((e, index) =>
-              index < 4 ? <p className="actor-name">{e.movie}</p> : null
-            )}
-          </div>
-          <div className="network-img-div-images">
-            {actormovie.map((e, index) =>
-              index < 4 ? <img className="img" src={e.url} /> : null
-            )}
-          </div>
-          <div className="network-img-div-images">
+          <div className="network-img-group-root">
           {actormovie.map((e, index) =>
-            index < 5 ? <LevelOne name={e.actor} /> : null
+            index < 4 ? (
+              <div className="group-root">
+                <p className="movie-name">{e.movie}</p>
+                <p className="actor-name">{e.actor}</p>
+
+                <img className="img" src={e.url} />
+                {/* {console.log(e)} */}
+              </div>
+            ) : null
           )}
         </div>
+          {/* <div className="level1">
+          {actormovie.map((e, index) =>
+            index < 4 ? <LevelOne name={e.actor} /> : null
+          )}
+        </div> */}
         </div>
     );
 }

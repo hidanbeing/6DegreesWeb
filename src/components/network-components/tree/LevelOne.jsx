@@ -13,8 +13,6 @@ import noimg from "..//../../image/noimg.jpeg";
 function LevelOne(prop){
 
     const [data, setData] = useState(movie);
-  
-  
     const [actormovie, setActormovie] = useState([]);
 
     const networkSetting = () => {
@@ -29,32 +27,40 @@ function LevelOne(prop){
             object.actor = element.actor;
             object.movie = element.movieName;
             object.url =
-              response.data.results.length !== 0
+              response.data.results.length !== 0 &&response.data.results[0].profile_path!==null
                 ? "http://image.tmdb.org/t/p/w185/" +
                   response.data.results[0].profile_path
-                : "";
-            setActormovie((e) => [...e, object]);
+                : " ";
+                if (object.url!==" "){
+                  setActormovie((e) => [...e, object]);
+                }
           });
       }
     };
   
+  
    
     useEffect(() => {
-        console.log(prop);
-      axios
+
+      if (prop.name!==undefined){
+        axios
         .get(
           `https://8voa49c8ee.execute-api.ap-northeast-2.amazonaws.com/default/?actor=${prop.name}`
         )
         .then((result) => {
-            console.log(result)
+            // console.log(result)
           if (result.data === null) {
-            // window.confirm("결과를 찾을 수 없습니다.");
+             window.confirm(prop.name,"데이터가 널임.");
           }
           setData(result.data);
         })
         .catch((err) => {
-        //   window.confirm("결과를 찾을 수 없습니다.");
+          console.log(prop.name)
+    console.log(err)
+           //window.confirm("결과를 찾을 수 없습니다.");
         });
+      }
+      
     }, []);
   
     useEffect(() => {
@@ -62,10 +68,10 @@ function LevelOne(prop){
     }, [data]);
   
     return (
-      <div className="network-div">
-        
+      <div>
+        {/* <div>{prop.name}</div> */}
   
-          {actormovie.length === 1 ? (
+          {/* {actormovie.length === 1 ? (
             <img className="line-img" src={line1} />
           ) : null}
           {actormovie.length === 2 ? (
@@ -74,23 +80,19 @@ function LevelOne(prop){
           {actormovie.length >= 3 ? (
             <img className="line-img" src={line3} />
           ) : null}
+           */}
           
-          
-          <div className="network-img-div-images">
-            {actormovie.map((e, index) =>
-              index < 3 ? <p className="actor-name">{e.actor}</p> : null
-            )}
-          </div>
-          <div className="network-img-div-images">
-            {actormovie.map((e, index) =>
-              index < 3 ? <p className="actor-name">{e.movie}</p> : null
-            )}
-          </div>
-          <div className="network-img-div-images">
-            {actormovie.map((e, index) =>
-              index < 3 ? <img className="img" src={e.url} /> : null
-            )}
-          </div>
+          <div className="network-img-group-level1">
+          {actormovie.map((e, index) =>
+            index < 2 ? (
+              <div className="group-level1">
+                <p className="actor-name">{e.actor}</p>
+                <p className="actor-name">{e.movie}</p>
+                <img className="img" src={e.url} />
+              </div>
+            ) : null
+          )}
+        </div>
           
         </div>
     );

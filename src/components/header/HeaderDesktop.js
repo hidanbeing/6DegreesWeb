@@ -16,6 +16,9 @@ function HeaderDesktop() {
         <Link to={`/network`} style={{ textDecoration: "none" }}>
           <DivRoute>Network</DivRoute>
         </Link>
+        <Link to={`/recommand`} style={{ textDecoration: "none" }}>
+          <DivRoute>Movies</DivRoute>
+        </Link>
         <Link to={`/contact`} style={{ textDecoration: "none" }}>
           <DivRoute>Contact</DivRoute>
         </Link>

@@ -4,6 +4,7 @@ import Details from "./routes/Details";
 import IntroductionPage from "./routes/IntroductionPage";
 import Network from "./routes/Network";
 import Contact from "./routes/Contact";
+import Recommand from "./routes/Recommand";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
           <Route path="/introduction" element={<IntroductionPage />} />
           <Route path="/network" element={<Network />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/recommand" element={<Recommand />} />
         </Routes>
       </Router>
     </>

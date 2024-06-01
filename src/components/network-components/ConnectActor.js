@@ -3,24 +3,20 @@ import "./Network.css";
 import { movie } from "./tmpdata";
 import axios from "axios";
 import { TMDB_API_KEY } from "../../Config";
-import InputActor from "../main/input/InputActor";
-import line1 from "../../image/line1.png";
-import line2 from "../../image/line2.png";
-import line3 from "../../image/line3.png";
-import line4 from "../../image/line4.png";
-import line5 from "../../image/line5.png";
+import InputActor2 from "../main/input/InputActor2";
 import noimg from "../../image/noimg.jpeg";
 import RootTree from "./tree/RootTree";
 export const ConnectActor = () => {
   // inputvalue, name은 계속 같아야함!!
 
-  const [inputvalue, setInputValue] = useState("마동석");
-  const [name, setName] = useState("마동석");
+  const [inputvalue, setInputValue] = useState("정인기");
+  const [name, setName] = useState("정인기");
   const [data, setData] = useState(movie);
 
   const [mainImgUrl, setMainImgUrl] = useState();
 
   const [actormovie, setActormovie] = useState([]);
+  const [actormovielen, setActormovielen] = useState(5);
 
   const onClick = () => {
     setName(inputvalue);
@@ -29,6 +25,7 @@ export const ConnectActor = () => {
   const networkSetting = () => {
     setActormovie([]);
     for (const element of data) {
+      var len = 0;
       axios
         .get(
           `https://api.themoviedb.org/3/search/person?api_key=${TMDB_API_KEY}&page=1&query=${element.actor}&language=ko-KR`
@@ -45,6 +42,8 @@ export const ConnectActor = () => {
               : " ";
           if (object.url !== " ") {
             setActormovie((e) => [...e, object]);
+            len++;
+            setActormovielen(len > 5 ? 5 : len);
           }
         });
     }
@@ -88,8 +87,8 @@ export const ConnectActor = () => {
   return (
     <div className="network-div">
       <div className="input-form">
-        <p>배우 이름 :</p>
-        <InputActor
+        <p>배우</p>
+        <InputActor2
           className="input-form-input"
           inputValue={inputvalue}
           setInputValue={setInputValue}
@@ -98,10 +97,12 @@ export const ConnectActor = () => {
           입력
         </button>
       </div>
-      <p className="main-name">
-        <span>'{name}'</span> 의 인물관계도
-      </p>
 
+      <div className="main-name">
+        <p>
+          <span>'{name}'</span> 의 인물관계도
+        </p>
+      </div>
       <div className="network-img-div">
         <div className="network-mainimg-div-div">
           <img
@@ -109,30 +110,32 @@ export const ConnectActor = () => {
             src={mainImgUrl === "" ? noimg : mainImgUrl}
           />
         </div>
-        {/* {actormovie.length === 1 ? (
-          <img className="line-img" src={line1} />
-        ) : null}
-        {actormovie.length === 2 ? (
-          <img className="line-img" src={line2} />
-        ) : null}
-        {actormovie.length === 3 ? (
-          <img className="line-img" src={line3} />
-        ) : null}
-        {actormovie.length === 4 ? (
-          <img className="line-img" src={line4} />
-        ) : null}
-        {actormovie.length >= 5 ? (
-          <img className="line-img" src={line5} />
-        ) : null} */}
 
         <div className="network-img-group">
+          {console.log(actormovielen)}
           {actormovie.map((e, index) =>
             index < 5 ? (
               <div className="group">
+                {index < Math.floor(actormovielen / 2) ? (
+                  <div>/</div>
+                ) : (
+                  <div></div>
+                )}
+                {index === Math.floor(actormovielen / 2) ? (
+                  <div>|</div>
+                ) : (
+                  <div></div>
+                )}
+                {index > Math.floor(actormovielen / 2) ? (
+                  <div>＼</div>
+                ) : (
+                  <div></div>
+                )}
+
                 <p className="movie-name">{e.movie}</p>
                 <p className="actor-name">{e.actor}</p>
-
                 <img className="img" src={e.url} />
+                <div>|</div>
               </div>
             ) : null
           )}

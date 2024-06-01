@@ -7,6 +7,7 @@ function Footer() {
         bottom: 5,
         color: "white",
         fontSize: 12,
+        zIndex: 100,
       }}
     >
       © 2024. LeeDanbee KwonBowon ChoiNagyeong All rights reserved.

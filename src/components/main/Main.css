@@ -1,14 +1,14 @@
 .main-div{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
     text-align: center;
     opacity: 1;
     transition: opacity 1s ease ;
     background-color: #EDEBEB;
     position: absolute;
     width: 100%;
-    
+    height: 87vh;
 }
 
 
@@ -38,14 +38,14 @@
 .main-title{
     margin: 50px 0px 10px 0px;
     color: black;
-    font-size: 45px;
+    font-size: 36px;
     font-weight: 1000;
 }
 
 .main-title-mobile{
     margin: 30px 0px 10px 0px;
     color: black;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 1000;
 }
 .main-subtitle{
@@ -85,11 +85,11 @@
 }
 
 .main-img-div{
-
+    z-index: -10;
 }
 
 .main-image{
-    width: 700px;
+    width: 500px;
     opacity: 1;
     transition: opacity 10s ease ;
     margin-top: -30;
@@ -104,14 +104,15 @@
 
 .search-form-div{
     position: relative;
-    margin: 40px 0px 0px 5%;
+    /* margin: 20px 0px 0px 5%; */
     display: flex;
-    width: 250px;
-    height: 350px;
+    width: 100%;
+    height: max-content;
     right: 0px;
     background-color: #D9D9D9;
     flex-direction: column;
     text-align: left;
+    /* border: 2px black solid; */
 }
 
 .search-form-choice{
@@ -139,7 +140,41 @@
 
 .main-left{
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    margin-left: 5%;
+    width: 80vw;
+    z-index: 10;
+    position: relative;
+    /* background-color: lemonchiffon; */
+}
+.main-right{
+    width: 20vw;
+    margin: 20px;
+    /* background-color: rebeccapurple; */
+}
+
+.inki1-image{
+    position: absolute;
+    left: 0px;
+    bottom: 0px; 
+    width: 205px;
+    z-index: -10;
+}
+.inki2-image{
+    position: absolute;
+    right:  -20px;
+    bottom: 0px;
+    width: 220px;
+    z-index: -10;
+}
+
+.tablet-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabelt-form{
+    position: absolute;
+    bottom: 3%;
+    width: 300px;
 }

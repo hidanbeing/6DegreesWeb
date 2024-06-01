@@ -1,7 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 import MainDesktop from "./MainDesktop";
 import MainMobile from "./MainMobile";
-import "./Main.css";
+import MainTablet from "./MainTablet";
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 });
@@ -25,7 +25,7 @@ function Main() {
         <MainDesktop />
       </Desktop>
       <Tablet>
-        <MainMobile />
+        <MainTablet />
       </Tablet>
       <Mobile>
         <MainMobile />

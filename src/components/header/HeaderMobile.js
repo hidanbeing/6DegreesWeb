@@ -9,7 +9,7 @@ function HeaderMobile() {
     <div className="header-div header-div-mobile">
       <div>
         <Link to={`/`} style={{ textDecoration: "none" }}>
-          <div className="header-title">6DegreesMovieWeb🎥</div>
+          <div className="header-title">InkiTree🎥</div>
         </Link>
       </div>
       <div onClick={() => setOpen(!open)} onMouseOut={() => setOpen(false)}>

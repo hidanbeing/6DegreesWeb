@@ -3,7 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { actors } from "../../actors";
 
-const InputActor = ({ inputValue, setInputValue }) => {
+const InputActor2 = ({ inputValue, setInputValue }) => {
   const [actorList, setActorList] = useState([]);
   const [isHaveInputValue, setIsHaveInputValue] = useState(false);
   const [dropDownList, setDropDownList] = useState(actorList);
@@ -93,13 +93,10 @@ const InputActor = ({ inputValue, setInputValue }) => {
 };
 
 const WholeBox = styled.div`
-  // display: flex;
-  // padding: 10px;
   flex-direction: column;
   align-items: center;
-  height: 145px;
   margin: 20px;
-  // background-color: black;
+  z-index: 100;
 `;
 
 const InputBox = styled.div`
@@ -156,4 +153,4 @@ const DropDownItem = styled.div`
     background-color: lightgray;
   }
 `;
-export default InputActor;
+export default InputActor2;

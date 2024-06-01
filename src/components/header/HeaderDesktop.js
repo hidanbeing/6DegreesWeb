@@ -6,7 +6,7 @@ function HeaderDesktop() {
     <div className="header-div">
       <div>
         <Link to={`/`} style={{ textDecoration: "none" }}>
-          <div className="header-title">6DegreesMovieWeb🎥</div>
+          <div className="header-title">Inkitree🎥</div>
         </Link>
       </div>
       <div className="header-menu">
@@ -16,9 +16,9 @@ function HeaderDesktop() {
         <Link to={`/network`} style={{ textDecoration: "none" }}>
           <DivRoute>Network</DivRoute>
         </Link>
-        <Link to={`/recommand`} style={{ textDecoration: "none" }}>
+        {/* <Link to={`/recommand`} style={{ textDecoration: "none" }}>
           <DivRoute>Movies</DivRoute>
-        </Link>
+        </Link> */}
         <Link to={`/contact`} style={{ textDecoration: "none" }}>
           <DivRoute>Contact</DivRoute>
         </Link>

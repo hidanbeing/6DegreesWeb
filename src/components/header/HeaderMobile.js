@@ -12,19 +12,22 @@ function HeaderMobile() {
           <div className="header-title">InkiTree🎥</div>
         </Link>
       </div>
-      <div onClick={() => setOpen(!open)} onMouseOut={() => setOpen(false)}>
+      <div onClick={() => setOpen(!open)}>
         <PiListLight className="header-menu-icon" size={30} color="black" />
       </div>
       {open ? (
         <div className="header-menu-div">
           <Link to={`/introduction`} style={{ textDecoration: "none" }}>
-            <DivRoute>Introduction</DivRoute>
+            <DivRoute>소개</DivRoute>
+          </Link>
+          <Link to={`/`} style={{ textDecoration: "none" }}>
+            <DivRoute>실시간 검색어</DivRoute>
           </Link>
           <Link to={`/network`} style={{ textDecoration: "none" }}>
-            <DivRoute>Network</DivRoute>
+            <DivRoute>네트워크</DivRoute>
           </Link>
           <Link to={`/contact`} style={{ textDecoration: "none" }}>
-            <DivRoute>Contact</DivRoute>
+            <DivRoute>연락</DivRoute>
           </Link>
         </div>
       ) : null}

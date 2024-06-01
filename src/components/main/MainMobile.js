@@ -1,6 +1,8 @@
 import InputForm from "./input/InputForm";
 import hwang from "../../image/hwang.png";
 import mainimage from "../../image/maingroupmobile.png";
+import inki from "../../image/inki.png";
+import inki2 from "../../image/inki2.png";
 
 function MainMobile() {
   return (
@@ -10,8 +12,9 @@ function MainMobile() {
       <div className="main-input-field">
         <InputForm />
       </div>
-      <div className="main-img-div-mobile">
-        <img className="main-image-moblie" src={mainimage} />
+      <div className="images">
+        <img className="inki-image-mobile" src={inki} width={100} />
+        <img className="inki2-image-mobie" src={inki2} width={100} />
       </div>
     </div>
   );

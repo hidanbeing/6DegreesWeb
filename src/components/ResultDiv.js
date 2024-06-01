@@ -11,6 +11,7 @@ function ResultDiv({ type, name }) {
         justifyContent: "center",
         alignItems: "center",
         marginBottom: 15,
+        cursor: "pointer",
       }}
     >
       <p

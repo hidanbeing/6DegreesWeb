@@ -91,7 +91,7 @@ export const ConnectActor = () => {
   }, [data]);
 
   const changeActor = (name) => {
-    setName(name);
+    // setName(name);
   };
 
   return (
@@ -162,7 +162,10 @@ export const ConnectActor = () => {
                 <img
                   className="img"
                   src={e.url}
-                  onClick={changeActor(e.actor)}
+                  onClick={() => {
+                    setInputValue(e.actor);
+                    setName(e.actor);
+                  }}
                 />
                 <div>|</div>
               </div>

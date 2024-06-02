@@ -97,11 +97,7 @@ function RootTree(prop){
             ) : null
           )}
         </div>
-          {/* <div className="level1">
-          {actormovie.map((e, index) =>
-            index < 4 ? <LevelOne name={e.actor} /> : null
-          )}
-        </div> */}
+         
         </div>
     );
 }

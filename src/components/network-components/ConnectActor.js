@@ -6,6 +6,12 @@ import { TMDB_API_KEY } from "../../Config";
 import InputActor2 from "../main/input/InputActor2";
 import noimg from "../../image/noimg.jpeg";
 import RootTree from "./tree/RootTree";
+import line1 from "../../image/line1.png";
+import line2 from "../../image/line2.png";
+import line3 from "../../image/line3.png";
+import line4 from "../../image/line4.png";
+import line5 from "../../image/line5.png";
+
 export const ConnectActor = () => {
   // inputvalue, name은 계속 같아야함!!
 
@@ -84,6 +90,10 @@ export const ConnectActor = () => {
     networkSetting();
   }, [data]);
 
+  const changeActor = (name) => {
+    setName(name);
+  };
+
   return (
     <div className="network-div">
       <div className="input-form">
@@ -110,13 +120,28 @@ export const ConnectActor = () => {
             src={mainImgUrl === "" ? noimg : mainImgUrl}
           />
         </div>
+        {actormovie.length === 1 ? (
+          <img className="line1-img" src={line1} />
+        ) : null}
+        {actormovie.length === 2 ? (
+          <img className="line1-img" src={line2} />
+        ) : null}
+        {actormovie.length === 3 ? (
+          <img className="line1-img" src={line3} />
+        ) : null}
+        {actormovie.length === 4 ? (
+          <img className="line1-img" src={line4} />
+        ) : null}
+        {actormovie.length >= 5 ? (
+          <img className="line1-img" src={line5} />
+        ) : null}
 
         <div className="network-img-group">
           {console.log(actormovielen)}
           {actormovie.map((e, index) =>
             index < 5 ? (
               <div className="group">
-                {index < Math.floor(actormovielen / 2) ? (
+                {/* {index < Math.floor(actormovielen / 2) ? (
                   <div>/</div>
                 ) : (
                   <div></div>
@@ -130,11 +155,15 @@ export const ConnectActor = () => {
                   <div>＼</div>
                 ) : (
                   <div></div>
-                )}
+                )} */}
 
                 <p className="movie-name">{e.movie}</p>
                 <p className="actor-name">{e.actor}</p>
-                <img className="img" src={e.url} />
+                <img
+                  className="img"
+                  src={e.url}
+                  onClick={changeActor(e.actor)}
+                />
                 <div>|</div>
               </div>
             ) : null

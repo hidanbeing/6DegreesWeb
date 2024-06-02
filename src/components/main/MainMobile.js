@@ -13,8 +13,8 @@ function MainMobile() {
         <InputForm />
       </div>
       <div className="images">
-        <img className="inki-image-mobile" src={inki} width={100} />
-        <img className="inki2-image-mobie" src={inki2} width={100} />
+        <img className="inki-image-mobile" src={inki} width={120} />
+        <img className="inki2-image-mobile" src={inki2} width={130} />
       </div>
     </div>
   );

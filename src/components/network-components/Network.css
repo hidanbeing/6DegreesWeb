@@ -101,15 +101,17 @@
 }
 
 
-
+/* 
 .line-img{
-    margin: -10px 0px -20px 0px;
+    margin: 10px 0px -20px 0px;
     z-index: 0;
     height: 50px;
-}
+} */
+
 
 .line1-img{
-    margin-top: -10px;
+    margin-top: 10px;
+    width: 900px;
     z-index: 0;
     height: 20px;
 }

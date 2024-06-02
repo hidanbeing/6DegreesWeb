@@ -7,7 +7,7 @@
     transition: opacity 1s ease ;
     background-color: #EDEBEB;
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 87vh;
 }
 
@@ -22,7 +22,7 @@
     transition: opacity 1s ease ;
     background-color: #EDEBEB;
     /* height: 87vh; */
-    width: 100%;
+    width: 100vw;
     position: relative;
 }
 
@@ -182,25 +182,34 @@
 }
 
 
-.inki-image-mobie{
-    left: 0px;
+.inki-image-mobile{
+    left: 30px;
     bottom: 0px; 
-    z-index: -10;
-    width: 10px;
+    /* z-index: -10; */
+    /* width: 10px; */
     position: absolute;
 }
 
 .inki2-image-mobile{
-    right: 0px;
+    right: 30px;
     bottom: 0px; 
-    z-index: -10;
-    width: 10px;
+    /* z-index: -10; */
+    /* width: 10px; */
     position: absolute;
 }
 
 .images{
     /* padding: 50px; */
     display: flex;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     height: 30vh;
+}
+
+.search-form-div li{
+    list-style: none;
+    cursor: pointer;
+    color: black;
+    /* text-decoration-style : dotted;
+    text-decoration-line: none; */
+    text-decoration: none;
 }

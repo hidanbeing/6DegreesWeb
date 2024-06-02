@@ -6,7 +6,7 @@ function Footer() {
         right: 1,
         bottom: 5,
         color: "white",
-        fontSize: 12,
+        fontSize: 10,
         zIndex: 100,
       }}
     >

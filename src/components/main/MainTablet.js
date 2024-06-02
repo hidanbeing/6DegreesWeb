@@ -15,9 +15,7 @@ function MainTablet() {
       <div className="main-input-field">
         <InputForm2 />
       </div>
-      <div className="tabelt-form">
-        <SearchForm />
-      </div>
+      <div className="tabelt-form">{/* <SearchForm /> */}</div>
     </div>
   );
 }

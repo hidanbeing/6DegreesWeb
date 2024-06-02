@@ -1,8 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Main.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export const SearchForm = () => {
     const [isopen, setIsopen] = useState(true);
+    const [searchActor, setSearchActor] = useState([]);
+
+    useEffect(()=>{
+        axios.get(
+            `https://4yvlnqrw19.execute-api.ap-northeast-2.amazonaws.com/default/`
+          )
+        .then((response) => {
+          setSearchActor(response.data);
+        })
+    },[])
     
     return (
     <div className="search-form-div">
@@ -18,33 +30,20 @@ export const SearchForm = () => {
         <div>
             {isopen?<div>
                 <ol>
-                    <li>1등</li>
-                    <li>2등</li>
-                    <li>3등</li>
-                    <li>4등</li>
-                    <li>5등</li>
-                    <li>6등</li>
-                    <li>7등</li>
-                    <li>8등</li>
-                    <li>9등</li>
-                    <li>10등</li>
+                    
+                    {searchActor.map((e,index)=>
+                        index<10?<Link style={{ textDecoration: "none"}} to={`/degrees?cast1=${e[0]}&cast2=${e[1]}`}><li>{index+1+". "+e[0] +" - "+e[1]}</li> </Link>:null
+                    )}
+                   
                 </ol>
             </div>: <div>
                 <ol>
-                    <li>11등</li>
-                    <li>12등</li>
-                    <li>13등</li>
-                    <li>14등</li>
-                    <li>15등</li>
-                    <li>16등</li>
-                    <li>17등</li>
-                    <li>18등</li>
-                    <li>19등</li>
-                    <li>20등</li>
+                {searchActor.map((e,index)=>
+                        (index>9&&index<20)?<Link style={{ textDecoration: "none"}} to={`/degrees?cast1=${e[0]}&cast2=${e[1]}`}><li>{index+1+". "+e[0] +" - "+e[1]}</li> </Link>:null
+                    )}
+                
                 </ol>
             </div>}
-            
-           
         </div>
     </div>
     );
